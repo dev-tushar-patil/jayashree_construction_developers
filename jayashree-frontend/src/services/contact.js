@@ -19,7 +19,7 @@ export function projectWhatsappMessage(projectName) {
 }
 
 export function serviceWhatsappMessage(serviceTitle) {
-  return `Hello Jayashree Construction & Developers, I am interested in your ${serviceTitle} service. Please share more information.`;
+  return `Hello Jayashri Construction & Developers, I am interested in your ${serviceTitle} service. Please share more information.`;
 }
 
 /** tel: link; 10-digit numbers are dialled with +91. */

@@ -55,10 +55,10 @@ export default function Home() {
       <section className="section" aria-labelledby="about-heading">
         <div className="container split">
           <Reveal className="split-media arch-frame">
-            <img src={assetUrl(get('home.aboutImage'))} alt="A home built by Jayashree Construction & Developers" loading="lazy" />
+            <img src={assetUrl(get('home.aboutImage'))} alt="A home built by Jayashri Construction & Developers" loading="lazy" />
           </Reveal>
           <Reveal className="split-copy" delay={100}>
-            <SectionHeading eyebrow="About Jayashree" title={get('home.aboutTitle')} id="about-heading" />
+            <SectionHeading eyebrow="About Jayashri" title={get('home.aboutTitle')} id="about-heading" />
             <p className="lead">{get('home.aboutText')}</p>
             <div className="mini-cards">
               <div className="mini-card">

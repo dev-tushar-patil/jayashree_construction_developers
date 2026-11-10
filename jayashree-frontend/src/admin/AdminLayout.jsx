@@ -43,7 +43,7 @@ export default function AdminLayout() {
 
   useEffect(() => setOpen(false), [location.pathname]);
   useEffect(() => {
-    document.title = 'Admin | Jayashree Construction & Developers';
+    document.title = 'Admin | Jayashri Construction & Developers';
   }, [location.pathname]);
 
   if (checking) return <Spinner label="Checking your session…" />;
@@ -60,7 +60,7 @@ export default function AdminLayout() {
         <div className="admin-brand">
           <img src="/images/brand/favicon.png" alt="" width="40" height="40" />
           <div>
-            <strong>Jayashree</strong>
+            <strong>Jayashri</strong>
             <span>Admin Panel</span>
           </div>
           <button type="button" className="icon-btn admin-close" onClick={() => setOpen(false)} aria-label="Close menu">

@@ -22,7 +22,7 @@ const FILTERS = [
 const PAGE_SIZE = 9;
 
 export default function Projects() {
-  usePageMeta('Projects', 'Residential homes, bungalows and villas built by Jayashree Construction & Developers in Satara.');
+  usePageMeta('Projects', 'Residential homes, bungalows and villas built by Jayashri Construction & Developers in Satara.');
   const [params, setParams] = useSearchParams();
   const active = FILTERS.find((f) => f.key === params.get('filter')) || FILTERS[0];
   const [state, setState] = useState({ items: [], page: 0, totalPages: 0, loading: true, error: null, more: false });

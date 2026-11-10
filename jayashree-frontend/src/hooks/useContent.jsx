@@ -7,18 +7,18 @@ import { publicApi } from '../services/api.js';
  * keep working either way.
  */
 const FALLBACK = {
-  'company.name': 'Jayashree Construction & Developers',
-  'company.shortName': 'Jayashree',
+  'company.name': 'Jayashri Construction & Developers',
+  'company.shortName': 'Jayashri',
   'company.tagline': 'Building Dreams. Creating Lasting Foundations.',
   'company.intro':
-    'Jayashree Construction & Developers is a Satara-based construction and real estate development company, delivering quality homes, bungalows and villas built on trust, transparency and commitment.',
+    'Jayashri Construction & Developers is a Satara-based construction and real estate development company, delivering quality homes, bungalows and villas built on trust, transparency and commitment.',
   'home.heroTitle': 'Building Dreams. *Creating Lasting Foundations.*',
   'home.heroSubtitle':
-    'From thoughtfully designed homes to quality construction, Jayashree Construction & Developers brings your dream spaces to life with trust, quality and commitment.',
+    'From thoughtfully designed homes to quality construction, Jayashri Construction & Developers brings your dream spaces to life with trust, quality and commitment.',
   'home.heroImage': '/images/hero/home.webp',
   'home.aboutTitle': 'Building with Trust, Growing with *Excellence*',
   'home.aboutText':
-    'Jayashree Construction & Developers is committed to delivering quality construction and thoughtfully designed spaces. We believe every project is more than just a structure — it is a foundation for dreams, relationships and a better future.',
+    'Jayashri Construction & Developers is committed to delivering quality construction and thoughtfully designed spaces. We believe every project is more than just a structure — it is a foundation for dreams, relationships and a better future.',
   'home.aboutImage': '/images/hero/about.webp',
   'home.ctaTitle': "Let's Build Your Dream Home Together",
   'home.ctaText': 'Tell us about your plot and your plans. Our team will get in touch with a customised solution.',
@@ -46,12 +46,12 @@ const FALLBACK = {
   'contact.mapsUrl': 'https://www.google.com/maps/search/?api=1&query=Satara%2C+Maharashtra',
   'contact.mapQuery': 'Satara, Maharashtra, India',
   'contact.whatsappMessage':
-    'Hello Jayashree Construction & Developers, I am interested in your construction services. Please share more information.',
+    'Hello Jayashri Construction & Developers, I am interested in your construction services. Please share more information.',
   'footer.text': 'Quality Construction | Timely Delivery | Lasting Relationships',
   'footer.copyright': 'All rights reserved.',
-  'seo.title': 'Jayashree Construction & Developers | Homes, Bungalows & Villas in Satara',
+  'seo.title': 'Jayashri Construction & Developers | Homes, Bungalows & Villas in Satara',
   'seo.description':
-    'Jayashree Construction & Developers, Satara: residential construction, bungalows, villas, architectural planning and land development, built with quality and trust.',
+    'Jayashri Construction & Developers, Satara: residential construction, bungalows, villas, architectural planning and land development, built with quality and trust.',
 };
 
 const ContentContext = createContext({ content: FALLBACK, get: (k) => FALLBACK[k] || '', list: () => [], loaded: false });

@@ -21,7 +21,7 @@ export default function WhyChoose({ compact }) {
     return (
       <div className="why-strip">
         <h2>
-          Why Choose <em>Jayashree?</em>
+          Why Choose <em>Jayashri?</em>
         </h2>
         <ul>
           {shown.slice(0, 4).map((item, i) => {
@@ -41,7 +41,7 @@ export default function WhyChoose({ compact }) {
   return (
     <section className="section section-sand" aria-labelledby="why-heading">
       <div className="container">
-        <SectionHeading eyebrow="Why Choose Us" title="Why Families Choose *Jayashree*" center id="why-heading" />
+        <SectionHeading eyebrow="Why Choose Us" title="Why Families Choose *Jayashri*" center id="why-heading" />
         <div className="why-grid">
           {shown.map((item, i) => {
             const Icon = WHY_ICONS[i % WHY_ICONS.length];

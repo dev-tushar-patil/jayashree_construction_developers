@@ -1,4 +1,4 @@
-# Starts Jayashree Construction & Developers on this PC: MySQL 8 on port 3309, the API on 8070 and the website on 5170.
+# Starts Jayashri Construction & Developers on this PC: MySQL 8 on port 3309, the API on 8070 and the website on 5170.
 # It does not use or change the MySQL service on port 3306 (version 5.5, too old for this project), nor other projects' ports.
 # First run: creates a private database folder and jayashree-backend\.env with random secrets and an admin password.
 # Run again any time; whatever is already running is left alone.
@@ -130,7 +130,7 @@ if (-not (Test-Port $WebPort)) {
 }
 
 Write-Host ''
-Write-Host 'Jayashree Construction & Developers is running.' -ForegroundColor Green
+Write-Host 'Jayashri Construction & Developers is running.' -ForegroundColor Green
 Write-Host "  Website: http://localhost:$WebPort"
 Write-Host "  Admin:   http://localhost:$WebPort/admin/login  (login is in jayashree-backend\.env)"
 Write-Host "  Logs:    $logs"

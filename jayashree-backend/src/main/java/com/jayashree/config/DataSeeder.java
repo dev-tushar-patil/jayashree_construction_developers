@@ -189,7 +189,7 @@ public class DataSeeder implements ApplicationRunner {
                 List.of("3 BHK bungalows", "Landscaped garden", "Covered parking", "Vastu-friendly planning"),
                 "/images/gallery/tiled-bungalow.webp", "/images/projects/card-1.webp",
                 "/images/gallery/veranda-swing.webp", "/images/gallery/living-room.webp");
-        project("Jayashree Villa Homes", ProjectCategory.VILLA, ProjectStatus.COMPLETED, "Satara", true,
+        project("Jayashri Villa Homes", ProjectCategory.VILLA, ProjectStatus.COMPLETED, "Satara", true,
                 "Premium residential villa development.",
                 "Contemporary villas designed for peaceful and luxurious living, with open-plan interiors, large "
                         + "glazing and private outdoor spaces.",
@@ -295,7 +295,7 @@ public class DataSeeder implements ApplicationRunner {
         review("Rahul Jadhav", 5, "Shantivan Bungalows", LocalDate.of(2025, 1, 12), true,
                 "The team kept us informed at every stage and handed over our bungalow on time. The quality of work "
                         + "is excellent.");
-        review("Snehal Pawar", 5, "Jayashree Villa Homes", LocalDate.of(2024, 5, 3), true,
+        review("Snehal Pawar", 5, "Jayashri Villa Homes", LocalDate.of(2024, 5, 3), true,
                 "Transparent pricing, good materials and a very cooperative site team. We are very happy with our villa.");
         review("Amit Deshmukh", 4, "Vastu Homes", LocalDate.of(2023, 8, 21), true,
                 "Thoughtful planning and neat finishing. Small changes we asked for during construction were handled well.");

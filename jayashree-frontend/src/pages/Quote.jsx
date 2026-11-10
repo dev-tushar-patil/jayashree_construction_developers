@@ -39,7 +39,7 @@ function quoteMessage(company, q) {
 
 export default function Quote() {
   const { get } = useContent();
-  usePageMeta('Get a Quote', 'Request a free construction quotation from Jayashree Construction & Developers, Satara.');
+  usePageMeta('Get a Quote', 'Request a free construction quotation from Jayashri Construction & Developers, Satara.');
   const [form, setForm] = useState(EMPTY);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ busy: false, error: '', sent: null });

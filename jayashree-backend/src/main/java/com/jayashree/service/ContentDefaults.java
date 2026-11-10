@@ -23,22 +23,22 @@ public final class ContentDefaults {
         Map<String, Entry> m = new LinkedHashMap<>();
 
         // --- Company ---------------------------------------------------------------------------
-        put(m, "company.name", "company", "Jayashree Construction & Developers");
-        put(m, "company.shortName", "company", "Jayashree");
+        put(m, "company.name", "company", "Jayashri Construction & Developers");
+        put(m, "company.shortName", "company", "Jayashri");
         put(m, "company.tagline", "company", "Building Dreams. Creating Lasting Foundations.");
         put(m, "company.intro", "company",
-                "Jayashree Construction & Developers is a Satara-based construction and real estate development company, "
+                "Jayashri Construction & Developers is a Satara-based construction and real estate development company, "
                         + "delivering quality homes, bungalows and villas built on trust, transparency and commitment.");
 
         // --- Home page -------------------------------------------------------------------------
         put(m, "home.heroTitle", "home", "Building Dreams. *Creating Lasting Foundations.*");
         put(m, "home.heroSubtitle", "home",
-                "From thoughtfully designed homes to quality construction, Jayashree Construction & Developers brings "
+                "From thoughtfully designed homes to quality construction, Jayashri Construction & Developers brings "
                         + "your dream spaces to life with trust, quality and commitment.");
         image(m, "home.heroImage", "home", "/images/hero/home.webp");
         put(m, "home.aboutTitle", "home", "Building with Trust, Growing with *Excellence*");
         put(m, "home.aboutText", "home",
-                "Jayashree Construction & Developers is committed to delivering quality construction and thoughtfully "
+                "Jayashri Construction & Developers is committed to delivering quality construction and thoughtfully "
                         + "designed spaces. We believe every project is more than just a structure — it is a foundation "
                         + "for dreams, relationships and a better future.");
         image(m, "home.aboutImage", "home", "/images/hero/about.webp");
@@ -67,16 +67,16 @@ public final class ContentDefaults {
         put(m, "about.heroTitle", "about", "A Legacy of Building Homes with *Trust*");
         put(m, "about.heroText", "about",
                 "Quality construction, thoughtful design and lasting relationships — the foundations of every "
-                        + "Jayashree home.");
+                        + "Jayashri home.");
         image(m, "about.heroImage", "about", "/images/hero/about.webp");
         put(m, "about.introTitle", "about", "Who We Are");
         put(m, "about.intro", "about",
-                "Jayashree Construction & Developers is a construction and real estate development company based in "
+                "Jayashri Construction & Developers is a construction and real estate development company based in "
                         + "Satara, Maharashtra. We build residential homes, bungalows and villas, and take projects "
                         + "from planning and approvals through construction to handover.");
-        put(m, "about.storyTitle", "about", "The Jayashree Journey");
+        put(m, "about.storyTitle", "about", "The Jayashri Journey");
         put(m, "about.story", "about",
-                "Jayashree Construction & Developers was founded with a simple vision — to create strong, beautiful "
+                "Jayashri Construction & Developers was founded with a simple vision — to create strong, beautiful "
                         + "and lasting homes for families. Over the years, we have grown with the trust and support of "
                         + "our clients, delivering spaces that combine quality construction, thoughtful design and the "
                         + "warmth of a true home.");
@@ -104,7 +104,7 @@ public final class ContentDefaults {
         url(m, "contact.mapsUrl", "contact", "https://www.google.com/maps/search/?api=1&query=Satara%2C+Maharashtra");
         put(m, "contact.mapQuery", "contact", "Satara, Maharashtra, India");
         put(m, "contact.whatsappMessage", "contact",
-                "Hello Jayashree Construction & Developers, I am interested in your construction services. "
+                "Hello Jayashri Construction & Developers, I am interested in your construction services. "
                         + "Please share more information.");
 
         // --- Social media ----------------------------------------------------------------------
@@ -116,9 +116,9 @@ public final class ContentDefaults {
         // --- Footer and SEO --------------------------------------------------------------------
         put(m, "footer.text", "footer", "Quality Construction | Timely Delivery | Lasting Relationships");
         put(m, "footer.copyright", "footer", "All rights reserved.");
-        put(m, "seo.title", "seo", "Jayashree Construction & Developers | Homes, Bungalows & Villas in Satara");
+        put(m, "seo.title", "seo", "Jayashri Construction & Developers | Homes, Bungalows & Villas in Satara");
         put(m, "seo.description", "seo",
-                "Jayashree Construction & Developers, Satara: residential construction, bungalows, villas, "
+                "Jayashri Construction & Developers, Satara: residential construction, bungalows, villas, "
                         + "architectural planning and land development, built with quality and trust.");
 
         ENTRIES = Collections.unmodifiableMap(m);

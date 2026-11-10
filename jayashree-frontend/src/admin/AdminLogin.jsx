@@ -36,7 +36,7 @@ export default function AdminLogin() {
   return (
     <div className="login-page">
       <div className="login-card">
-        <img src="/images/brand/logo.jpeg" alt="Jayashree Construction & Developers" className="login-logo" width="640" height="640" />
+        <img src="/images/brand/logo.jpeg" alt="Jayashri Construction & Developers" className="login-logo" width="640" height="640" />
         <h1>Admin Login</h1>
         <p className="login-sub">Sign in to manage the website.</p>
         <form onSubmit={submit} noValidate>

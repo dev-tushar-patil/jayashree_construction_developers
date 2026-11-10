@@ -39,4 +39,4 @@ if ($left.Count -gt 0) {
     Write-Host "Could not stop everything. Still running on port(s): $($left -join ', ')" -ForegroundColor Red
     exit 1
 }
-Write-Host 'Jayashree Construction & Developers has stopped.'
+Write-Host 'Jayashri Construction & Developers has stopped.'

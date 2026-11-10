@@ -1,6 +1,6 @@
-# Jayashree Construction & Developers: website and admin panel
+# Jayashri Construction & Developers: website and admin panel
 
-A full-stack website for Jayashree Construction & Developers, Satara. Visitors see the public site. The owner runs
+A full-stack website for Jayashri Construction & Developers, Satara. Visitors see the public site. The owner runs
 everything from a secure admin panel at `/admin/login`: projects with multiple photos, the gallery, services, reviews,
 enquiries, and all page text, contact details and social links. The pages render whatever the API returns, so changing
 content never needs a code change.
@@ -180,8 +180,6 @@ With the site and API on one domain, leave `VITE_API_ORIGIN` empty. Back up the 
 - [ ] Add **social media links** (icons appear only for links that are filled in).
 - [ ] Replace the **temporary photos**. They were cut from the design mockups, so they are low resolution. Upload real
       project photos, and change the page images in *Website Content*.
-- [ ] Confirm the **company name spelling**: the official logo reads "JAYASHRI", the website text says "Jayashree".
-      The text is editable in *Website Content → Company*. The logo is shown exactly as supplied.
 - [ ] Review the default copy (story, vision, mission, values, service descriptions).
 - [ ] Production settings: `SEED_SAMPLE_DATA=false`, a new `JWT_SECRET`, HTTPS, backups.
 

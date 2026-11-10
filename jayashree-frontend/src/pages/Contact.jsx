@@ -9,7 +9,7 @@ import { formatPhone, mapEmbedUrl, telLink } from '../services/contact.js';
 
 export default function Contact() {
   const { get } = useContent();
-  usePageMeta('Contact Us', `Call ${get('contact.person')} or send an enquiry to Jayashree Construction & Developers, Satara.`);
+  usePageMeta('Contact Us', `Call ${get('contact.person')} or send an enquiry to Jayashri Construction & Developers, Satara.`);
   const phones = [get('contact.phone1'), get('contact.phone2')].filter(Boolean);
   const email = get('contact.email');
 

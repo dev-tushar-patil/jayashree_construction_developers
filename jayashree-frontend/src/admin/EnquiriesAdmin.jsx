@@ -14,7 +14,7 @@ const TONE = { NEW: 'orange', CONTACTED: 'blue', FOLLOW_UP: 'purple', CONVERTED:
 
 function customerWhatsapp(e) {
   const topic = e.projectName || e.interestedIn || e.constructionType || 'your enquiry';
-  return whatsappLink(e.mobile, `Hello ${e.fullName}, this is Jayashree Construction & Developers regarding your enquiry about ${topic}.`);
+  return whatsappLink(e.mobile, `Hello ${e.fullName}, this is Jayashri Construction & Developers regarding your enquiry about ${topic}.`);
 }
 
 function EnquiryModal({ enquiry, onClose, onSaved, onDelete }) {

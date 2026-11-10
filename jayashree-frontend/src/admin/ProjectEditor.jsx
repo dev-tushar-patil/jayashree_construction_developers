@@ -205,7 +205,7 @@ export default function ProjectEditor() {
           <section className="panel panel-pad">
             <h2 className="panel-title">Project Details</h2>
             <div className="form-grid">
-              <Field label="Project Name" required value={form.name} onChange={set('name')} error={errors.name} maxLength={150} className="span-2" placeholder="e.g. Jayashree Villa Homes" />
+              <Field label="Project Name" required value={form.name} onChange={set('name')} error={errors.name} maxLength={150} className="span-2" placeholder="e.g. Jayashri Villa Homes" />
               <Field label="Project Category" as="select" required value={form.category} onChange={set('category')} error={errors.category}>
                 {Object.entries(PROJECT_CATEGORIES).map(([k, v]) => (
                   <option key={k} value={k}>

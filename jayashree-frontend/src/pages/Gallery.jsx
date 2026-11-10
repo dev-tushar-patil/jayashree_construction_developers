@@ -20,7 +20,7 @@ const FILTERS = [
 const PAGE_SIZE = 18;
 
 export default function Gallery() {
-  usePageMeta('Gallery', 'Photos of homes, bungalows, villas and interiors by Jayashree Construction & Developers.');
+  usePageMeta('Gallery', 'Photos of homes, bungalows, villas and interiors by Jayashri Construction & Developers.');
   const [params, setParams] = useSearchParams();
   const active = FILTERS.find((f) => f.key === params.get('category')) || FILTERS[0];
   const [state, setState] = useState({ items: [], page: 0, totalPages: 0, loading: true, error: null, more: false, moreError: '' });
@@ -54,7 +54,7 @@ export default function Gallery() {
       <PageHero
         eyebrow="Our Gallery"
         title="A Glimpse of Our *Work*"
-        text="Explore our completed and ongoing projects, showcasing the quality, design and craftsmanship that define Jayashree Construction & Developers."
+        text="Explore our completed and ongoing projects, showcasing the quality, design and craftsmanship that define Jayashri Construction & Developers."
         image="/images/hero/gallery.webp"
       />
 

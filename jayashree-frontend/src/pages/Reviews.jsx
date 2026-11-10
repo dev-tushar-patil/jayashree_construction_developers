@@ -107,7 +107,7 @@ function ReviewForm() {
 }
 
 export default function Reviews() {
-  usePageMeta('Reviews', 'What customers say about Jayashree Construction & Developers.');
+  usePageMeta('Reviews', 'What customers say about Jayashri Construction & Developers.');
   const [page, setPage] = useState(0);
   const { data, loading, error, reload } = useFetch(() => publicApi.reviews({ page, size: 9 }), [page]);
   const summary = useFetch(() => publicApi.reviewSummary(), []);
