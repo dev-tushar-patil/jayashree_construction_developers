@@ -1,6 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Spinner } from '../components/States.jsx';
+import { IS_PREVIEW } from '../services/api.js';
+import PreviewAdminNotice from '../pages/PreviewAdminNotice.jsx';
 import SiteLayout from '../layouts/SiteLayout.jsx';
 import About from '../pages/About.jsx';
 import Contact from '../pages/Contact.jsx';
@@ -33,14 +35,20 @@ export default function AppRoutes() {
         <Route path="get-a-quote" element={<Quote />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-      <Route
-        path="admin/*"
-        element={
-          <Suspense fallback={<Spinner label="Loading admin panel…" />}>
-            <AdminRoot />
-          </Suspense>
-        }
-      />
+      {IS_PREVIEW ? (
+        <Route element={<SiteLayout />}>
+          <Route path="admin/*" element={<PreviewAdminNotice />} />
+        </Route>
+      ) : (
+        <Route
+          path="admin/*"
+          element={
+            <Suspense fallback={<Spinner label="Loading admin panel…" />}>
+              <AdminRoot />
+            </Suspense>
+          }
+        />
+      )}
     </Routes>
   );
 }

@@ -7,7 +7,7 @@ import SectionHeading from '../components/SectionHeading.jsx';
 import WhatsAppButton from '../components/WhatsAppButton.jsx';
 import { useContent } from '../hooks/useContent.jsx';
 import { usePageMeta } from '../hooks/usePageMeta.js';
-import { errorMessage, fieldErrors, publicApi } from '../services/api.js';
+import { IS_PREVIEW, errorMessage, fieldErrors, publicApi } from '../services/api.js';
 import { BUDGETS, CONSTRUCTION_TYPES } from '../services/labels.js';
 
 const EMPTY = {
@@ -82,8 +82,17 @@ export default function Quote() {
             {status.sent ? (
               <div className="form-success-panel" role="status">
                 <TbCircleCheck aria-hidden="true" />
-                <h2>Thank you, {status.sent.fullName.split(' ')[0]}! Your quote request has been received.</h2>
-                <p>Our team will review your requirements and contact you shortly. Want a faster reply? Send the details on WhatsApp.</p>
+                {IS_PREVIEW ? (
+                  <>
+                    <h2>Thank you, {status.sent.fullName.split(' ')[0]}! This is a demo preview.</h2>
+                    <p>Forms are not saved in the preview yet. Tap below to send your details on WhatsApp so our team receives them.</p>
+                  </>
+                ) : (
+                  <>
+                    <h2>Thank you, {status.sent.fullName.split(' ')[0]}! Your quote request has been received.</h2>
+                    <p>Our team will review your requirements and contact you shortly. Want a faster reply? Send the details on WhatsApp.</p>
+                  </>
+                )}
                 <div className="form-success-actions">
                   <WhatsAppButton message={quoteMessage(get('company.name'), status.sent)}>Send details on WhatsApp</WhatsAppButton>
                   <button type="button" className="btn btn-ghost" onClick={() => setStatus({ busy: false, error: '', sent: null })}>

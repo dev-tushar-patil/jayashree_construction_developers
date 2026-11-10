@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TbCircleCheck, TbMail, TbMapPin, TbMessage2, TbPhone, TbSend, TbUser } from 'react-icons/tb';
-import { errorMessage, fieldErrors, publicApi } from '../services/api.js';
+import { IS_PREVIEW, errorMessage, fieldErrors, publicApi } from '../services/api.js';
 import { INTERESTED_IN } from '../services/labels.js';
 import Field from './Field.jsx';
 import WhatsAppButton from './WhatsAppButton.jsx';
@@ -56,8 +56,17 @@ export default function EnquiryForm({ type = 'CONTACT', projectId, projectName, 
     return (
       <div className="form-success-panel" role="status">
         <TbCircleCheck aria-hidden="true" />
-        <h3>Thank you! Your enquiry has been sent.</h3>
-        <p>Our team will call you back shortly. For a faster reply, message us on WhatsApp.</p>
+        {IS_PREVIEW ? (
+          <>
+            <h3>Thank you! This is a demo preview.</h3>
+            <p>Forms are not saved in the preview yet. Please send your enquiry on WhatsApp so our team receives it.</p>
+          </>
+        ) : (
+          <>
+            <h3>Thank you! Your enquiry has been sent.</h3>
+            <p>Our team will call you back shortly. For a faster reply, message us on WhatsApp.</p>
+          </>
+        )}
         <div className="form-success-actions">
           <WhatsAppButton message={whatsappMessage} />
           <button type="button" className="btn btn-ghost" onClick={() => setStatus({ busy: false, error: '', done: false })}>

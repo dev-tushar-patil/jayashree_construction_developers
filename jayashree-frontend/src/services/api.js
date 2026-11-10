@@ -42,6 +42,7 @@ export const setToken = (token) => (token ? storage()?.setItem(TOKEN_KEY, token)
 /** Bundled demo images are served by the website; uploads by the API (or the configured storage). */
 export function assetUrl(url) {
   if (!url) return '';
+  if (url.startsWith('/images/')) return `${import.meta.env.BASE_URL}${url.slice(1)}`;
   return url.startsWith('/uploads/') ? `${API_ORIGIN}${url}` : url;
 }
 
@@ -57,7 +58,7 @@ export const fieldErrors = (error) => error?.response?.data?.fieldErrors || {};
 const data = (promise) => promise.then((r) => r.data);
 
 /** Everything the public site reads or submits. */
-export const publicApi = {
+const liveApi = {
   content: () => data(api.get('/content')),
   projects: (params) => data(api.get('/projects', { params })),
   featuredProjects: (limit = 6) => data(api.get('/projects/featured', { params: { limit } })),
@@ -71,3 +72,48 @@ export const publicApi = {
   submitReview: (body) => data(api.post('/reviews', body)),
   enquire: (body) => data(api.post('/enquiries', body)),
 };
+
+/*
+ * Static preview (GitHub Pages): no server, so content comes from a saved snapshot (preview-data.json, made by
+ * `npm run build:pages`) and is filtered here. Forms don't save anything; the success panels offer WhatsApp.
+ */
+export const IS_PREVIEW = import.meta.env.VITE_STATIC_PREVIEW === 'true';
+
+let snapshot;
+const preview = () => {
+  snapshot ||= fetch(`${import.meta.env.BASE_URL}preview-data.json`).then((r) => {
+    if (!r.ok) throw new Error('Preview content could not be loaded');
+    return r.json();
+  });
+  return snapshot;
+};
+
+const notFound = () => Promise.reject(Object.assign(new Error('Not found'), { response: { status: 404, data: { message: 'Not found' } } }));
+
+function paged(items, { page = 0, size = 12 } = {}) {
+  const start = page * size;
+  return { content: items.slice(start, start + size), page, size, totalElements: items.length, totalPages: Math.ceil(items.length / size) };
+}
+
+const previewApi = {
+  content: () => preview().then((d) => d.content),
+  projects: (params = {}) =>
+    preview().then((d) =>
+      paged(
+        d.projects.filter((p) => (!params.category || p.category === params.category) && (!params.status || p.status === params.status)),
+        params,
+      ),
+    ),
+  featuredProjects: (limit = 6) => preview().then((d) => d.featured.slice(0, limit)),
+  project: (slug) => preview().then((d) => d.projectDetails[slug] || notFound()),
+  services: () => preview().then((d) => d.services),
+  service: (slug) => preview().then((d) => d.services.find((s) => s.slug === slug) || notFound()),
+  gallery: (params = {}) => preview().then((d) => paged(d.gallery.filter((g) => !params.category || g.category === params.category), params)),
+  reviews: (params = {}) => preview().then((d) => paged(d.reviews, params)),
+  testimonials: () => preview().then((d) => d.testimonials),
+  reviewSummary: () => preview().then((d) => d.reviewSummary),
+  submitReview: async () => ({ message: 'Thank you! (This is a demo preview, so reviews are not saved yet.)' }),
+  enquire: async () => ({ id: 0, preview: true }),
+};
+
+export const publicApi = IS_PREVIEW ? previewApi : liveApi;

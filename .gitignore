@@ -18,3 +18,4 @@ logs/
 *.iml
 .DS_Store
 Thumbs.db
+jayashree-frontend/dist-pages/
