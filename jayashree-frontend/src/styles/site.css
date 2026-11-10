@@ -2218,6 +2218,14 @@
     height: 64px;
   }
 
+  /* backdrop-filter makes the header the containing block for position:fixed children, which squeezed the
+     menu drawer into the 72px header. Solid white header on these widths so the drawer is full height. */
+  .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--white);
+  }
+
   .nav-toggle {
     display: grid;
   }
@@ -2229,6 +2237,8 @@
     bottom: 0;
     z-index: 70;
     width: min(320px, 86vw);
+    height: 100vh;
+    height: 100dvh;
     padding: 88px 20px 24px;
     background: var(--white);
     box-shadow: var(--shadow-lg);
@@ -2267,8 +2277,14 @@
   }
 
   .nav-quote-mobile .btn {
+    display: flex;
+    justify-content: center;
     width: 100%;
     color: var(--white);
+  }
+
+  body.nav-open .whatsapp-float {
+    display: none;
   }
 
   .nav-toggle {
