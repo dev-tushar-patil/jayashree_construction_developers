@@ -1,0 +1,20 @@
+# Secrets
+.env
+.env.local
+!.env.example
+
+# Build output
+jayashree-backend/target/
+jayashree-frontend/dist/
+jayashree-frontend/node_modules/
+
+# Runtime data
+jayashree-backend/uploads/
+logs/
+
+# Editors / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

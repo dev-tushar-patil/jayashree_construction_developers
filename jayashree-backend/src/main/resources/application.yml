@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: jayashree-backend
+  # Local secrets live in jayashree-backend/.env (git-ignored). See .env.example.
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/jayashree?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none  # Flyway owns the schema (src/main/resources/db/migration)
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        default_batch_fetch_size: 50
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      # Per file, and per request. The admin panel compresses photos in the browser and sends them in batches.
+      max-file-size: ${UPLOAD_MAX_FILE_SIZE:15MB}
+      max-request-size: ${UPLOAD_MAX_REQUEST_SIZE:80MB}
+
+server:
+  port: ${SERVER_PORT:8070}
+  # Set FORWARD_HEADERS=framework only when running behind a trusted reverse proxy.
+  forward-headers-strategy: ${FORWARD_HEADERS:none}
+  compression:
+    enabled: true
+    mime-types: application/json,text/plain
+
+jayashree:
+  cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5170}
+  seed-sample-data: ${SEED_SAMPLE_DATA:true}
+  rate-limit-per-minute: ${RATE_LIMIT_PER_MINUTE:15}
+  storage:
+    # "local" stores files on this server's disk. See README "Image storage" for moving to cloud storage.
+    type: ${STORAGE_TYPE:local}
+    upload-dir: ${UPLOAD_DIR:uploads}
+    public-base-url: ${UPLOAD_PUBLIC_BASE_URL:/uploads}
+  images:
+    max-dimension: ${IMAGE_MAX_DIMENSION:2000}     # longest side kept for display copies, in pixels
+    thumbnail-width: ${IMAGE_THUMBNAIL_SIZE:800}    # longest side of card/grid thumbnails, in pixels
+    jpeg-quality: ${IMAGE_JPEG_QUALITY:0.84}
+    max-source-pixels: ${IMAGE_MAX_SOURCE_PIXELS:60000000}  # refuses decompression bombs
+  jwt:
+    secret: ${JWT_SECRET}     # required, at least 32 characters
+    expiry-hours: ${JWT_EXPIRY_HOURS:8}
+  admin:
+    # The first admin is created from these when no admin exists yet. Nothing is hardcoded in the frontend.
+    username: ${ADMIN_USERNAME:admin}
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
